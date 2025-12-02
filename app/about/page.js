@@ -3,13 +3,14 @@ import Link from "next/link"
 export default function About() {
     return (
         <div className="subpixel-antialiased mx-auto max-w-4xl tracking-tight px-4 md:px-0 mb-8">
-            <Link href="/">
-                <div className="text-center bg-blue-200 hover:bg-blue-500 rounded-xl text-lg font-bold mt-6 mb-2 p-2 flex flex-row items-center justify-center md:justify-start mx-8 md:mx-0 md:inline-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
-                    </svg> &nbsp; Go Back
-                </div>
-            </Link>
+           
+
+            <Link href="/" className="inline-flex items-center text-stone-500 hover:text-orange-600 transition-colors mb-8 group font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                    </svg>
+                    Go Back
+                </Link>
 
             <h1 className="text-gray-600 text-5xl mt-12 mb-4">Welcome to Find a Movie</h1>
             <p className="text-lg text-gray-700 ">
@@ -33,7 +34,7 @@ export default function About() {
 
             <h3 className="text-gray-600 text-lg mt-6 mb-2 font-bold">TailwindCSS</h3>
             <p className="text-lg text-gray-700 ">
-                Makes te page responsive andand is easy to work with.
+                Makes te page responsive and it's pretty easy to work with.
             </p>
 
             <h2 className="text-gray-600 text-lg mt-6 mb-2 font-bold">My personal webpage</h2>
