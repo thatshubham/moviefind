@@ -1,10 +1,21 @@
 import Movie from "./Movie";
 
 export default async function Home() {
-    let d_popular = await fetch(
+    // 1. Fetch the data
+    const res = await fetch(
         `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`
     );
-    let r_popular = await d_popular.json();
+
+    // 2. Parse the JSON
+    const data = await res.json();
+
+    // 3. Debugging: If "results" is missing, log what we actually got
+    if (!data.results) {
+        console.error("❌ TMDB API Error:", data);
+    }
+
+    // 4. Safely assign the results (default to empty array if missing)
+    const movies = data.results || [];
 
     return (
         <main>
@@ -23,15 +34,22 @@ export default async function Home() {
             </div>
 
             <div className="px-2 grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-12 md:gap-x-16 md:gap-y-8 container w-full">
-                {r_popular.results.map((movie) => (
-                    <Movie
-                        key={movie.id}
-                        id={movie.id}
-                        title={movie.title}
-                        poster_path={movie.poster_path}
-                        release_date={movie.release_date}
-                    />
-                ))}
+                {/* 5. Check if we have movies before mapping */}
+                {movies.length > 0 ? (
+                    movies.map((movie) => (
+                        <Movie
+                            key={movie.id}
+                            id={movie.id}
+                            title={movie.title}
+                            poster_path={movie.poster_path}
+                            release_date={movie.release_date}
+                        />
+                    ))
+                ) : (
+                    <p className="text-center col-span-full text-red-500">
+                        No movies found. Check your API Key console logs.
+                    </p>
+                )}
             </div>
         </main>
     );
