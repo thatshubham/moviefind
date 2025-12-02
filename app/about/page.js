@@ -17,24 +17,23 @@ export default function About() {
             </p>
 
             <h2 className="text-xl text-gray-700 font-bold mt-6">Technology used</h2>
-            <h3 className="text-gray-600 text-lg mt-2 mb-2 font-bold">Next.js 13</h3>
+            <h3 className="text-gray-600 text-lg mt-2 mb-2 font-bold">Next.js v13</h3>
             <p className="text-lg text-gray-700 ">
-                The new app directory makes it easy to lay out complex interfaces that maintain state across navigations, avoid expensive re-renders and enable advanced routing patterns. In this project, I&apos;ve made use of both - Server and Client Components. The home page which consumes an API is a server component while the movie page is a client component.
+                The new app directory makes it easy to enable advanced routing patterns. In this project, I&apos;ve made use of both - Server and Client Components. The home page which consumes an API is a server component while the movie page is a client component.
             </p>
 
             <h3 className="text-gray-600 text-lg mt-6 mb-2 font-bold">API Integration</h3>
             <p className="text-lg text-gray-700 ">
-                This project consumes The Movie Database (TMDB) API. I am thankful to them for providing such an easy-to-follow documentation and stable API.
-            </p>
+                This project uses The Movie Database (TMDB) API.             </p>
 
             <h3 className="text-gray-600 text-lg mt-6 mb-2 font-bold">GitHub Integration</h3>
             <p className="text-lg text-gray-700 ">
-                I am hosting this project on Vercel. I&apos;ve used other hosting platforms and VPS in the past, deploying to Vercel is really effortless. The platform automatically detects Next.js, runs next build and optimizes the build output for me. The code lives on a github repo and all changes are synced automatically.
+                I am hosting this project on Vercel. I&apos;ve used other hosting platforms and VPS in the past, however when it comes to next.js, deploying to Vercel is really effortless. The platform automatically detects it, runs the build command and optimizes the output for me. The code lives on a github repo and all changes are synced automatically.
             </p>
 
             <h3 className="text-gray-600 text-lg mt-6 mb-2 font-bold">TailwindCSS</h3>
             <p className="text-lg text-gray-700 ">
-                It helps me design and develop responsive and mobile-friendly web applications quickly. I can leverage its power to create custom styles and layouts quickly and it&apos;s integration with Next.js is as easy as it gets.
+                Makes te page responsive andand is easy to work with.
             </p>
 
             <h2 className="text-gray-600 text-lg mt-6 mb-2 font-bold">My personal webpage</h2>
