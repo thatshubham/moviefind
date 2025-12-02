@@ -34,7 +34,7 @@ export default function About() {
 
             <h3 className="text-gray-600 text-lg mt-6 mb-2 font-bold">TailwindCSS</h3>
             <p className="text-lg text-gray-700 ">
-                Makes te page responsive and it's pretty easy to work with.
+                Makes the page responsive and it's pretty easy to work with.
             </p>
 
             <h2 className="text-gray-600 text-lg mt-6 mb-2 font-bold">My personal webpage</h2>
