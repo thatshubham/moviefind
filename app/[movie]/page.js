@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* import Image from "next/image";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -144,11 +144,11 @@ export default async function MovieDetail({ params }) {
             </div>
         </>
     );
-}
+} */
  
 
 
-/* import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -325,4 +325,4 @@ export default async function MovieDetail({ params }) {
             </div>
         </div>
     );
-} */
+} 
