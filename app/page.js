@@ -89,7 +89,7 @@ export default async function Home() {
                 <span className="relative flex justify-center">
                     <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
 
-                    <span className="relative z-10 bg-white text-stone-500 text-base font-medium px-6">
+                    <span className="relative z-10 bg-stone-50 text-stone-500 text-base font-medium px-6">
                         IMDb & Info? Click the Poster!
                     </span>
                 </span>
