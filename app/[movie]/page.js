@@ -264,7 +264,7 @@ export default async function MovieDetail({ params }) {
                                     </h1>
                                     {response.tagline && (
                                         <p className="text-orange-600 font-medium italic text-lg opacity-90">
-                                            "{response.tagline}"
+                                            {response.tagline}
                                         </p>
                                     )}
                                 </div>
