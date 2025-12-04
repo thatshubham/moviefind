@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "MovieFinder - Explore Trending Movies",
     description: "Explore the must-watch movies of the week. Updated daily.",
-    images: ["/main.jpg"],
+    images: ["/main.JPG"],
   },
 
   icons: {
