@@ -151,6 +151,62 @@ export default async function MovieDetail({ params }) {
 import Image from "next/image";
 import Link from "next/link";
 
+
+
+export async function generateMetadata({ params }) {
+    const { movie } = params;
+
+    const data = await fetch(
+        `https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.API_KEY}`
+    );
+    const response = await data.json();
+
+    const imagePath = "https://image.tmdb.org/t/p/original";
+    const releaseYear = response.release_date ? new Date(response.release_date).getFullYear() : "";
+    
+    const ogImage = response.backdrop_path 
+        ? imagePath + response.backdrop_path 
+        : (response.poster_path ? imagePath + response.poster_path : "/default-movie.jpg");
+
+    return {
+        title: `${response.title} ${releaseYear ? `(${releaseYear})` : ""} | Movie Details`,
+        description: response.overview || `Detailed information about ${response.title}, including cast, runtime, and budget.`,
+        keywords: [
+            response.title,
+            `${response.title} review`,
+            `${response.title} cast`,
+            "movie details",
+            "film database",
+            response.original_language === 'en' ? "hollywood" : "international film"
+        ],
+        openGraph: {
+            title: `${response.title} - Synopsis and Details`,
+            description: response.overview,
+            url: `https://moviefind.vercel.app/${movie}`,
+            siteName: "Mvie Finder",
+            images: [{
+                url: ogImage,
+                width: 1200,
+                height: 630,
+                alt: `${response.title} Movie Poster`
+            }],
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${response.title} (${releaseYear})`,
+            description: response.tagline || response.overview,
+            images: [ogImage],
+        },
+        alternates: {
+            canonical: `https://moviefind.vercel.app/${movie}` 
+        }
+    };
+}
+
+
+
+
 export async function generateStaticParams() {
     const data = await fetch(
         `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`
